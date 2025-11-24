@@ -1,174 +1,257 @@
-{\rtf1\ansi\ansicpg1252\cocoartf2761
-\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
-{\colortbl;\red255\green255\blue255;}
-{\*\expandedcolortbl;;}
-\margl1440\margr1440\vieww11520\viewh8400\viewkind0
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+/* Pastel Theme CSS */
 
-\f0\fs24 \cf0 /* --- Global Reset & Typography --- */\
-:root \{\
-    --color-primary: #8AB89A; /* Soft Sage Green */\
-    --color-secondary: #D4B4E8; /* Soft Lilac */\
-    --color-text: #333333;\
-    --color-background: #F8F8F8; /* Light Off-White */\
-    --color-light-background: #FFFFFF; \
-    --font-family: 'Quicksand', sans-serif;\
-\}\
-\
-* \{\
-    box-sizing: border-box;\
-    margin: 0;\
-    padding: 0;\
-\}\
-\
-body \{\
-    font-family: var(--font-family);\
-    line-height: 1.6;\
-    color: var(--color-text);\
-    background-color: var(--color-background);\
-\}\
-\
-.container \{\
-    max-width: 1200px;\
-    margin: 0 auto;\
-    padding: 0 20px;\
-\}\
-\
-/* --- Header & Navigation --- */\
-header \{\
-    background-color: var(--color-light-background);\
-    padding: 15px 0;\
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05); /* Soft Shadow */\
-\}\
-\
-nav \{\
-    display: flex;\
-    justify-content: space-between;\
-    align-items: center;\
-\}\
-\
-.logo \{\
-    font-size: 1.5rem;\
-    font-weight: 700;\
-    color: var(--color-primary);\
-    text-decoration: none;\
-\}\
-\
-.nav-links a \{\
-    text-decoration: none;\
-    color: var(--color-text);\
-    margin-left: 25px;\
-    font-weight: 500;\
-    transition: color 0.3s;\
-\}\
-\
-.nav-links a:hover \{\
-    color: var(--color-primary);\
-\}\
-\
-/* --- Hero Section (The Big Intro) --- */\
-.hero \{\
-    background: var(--color-light-background);\
-    padding: 100px 0;\
-    text-align: center;\
-\}\
-\
-.hero h1 \{\
-    font-size: 3.5rem;\
-    margin-bottom: 15px;\
-    font-weight: 300;\
-\}\
-\
-.hero h1 strong \{\
-    font-weight: 700;\
-    color: var(--color-primary);\
-\}\
-\
-.hero .subtitle \{\
-    font-size: 1.2rem;\
-    color: #666;\
-    margin-bottom: 40px;\
-\}\
-\
-/* --- Call to Action Buttons (Soft Look) --- */\
-.cta-group a \{\
-    text-decoration: none;\
-    padding: 12px 30px;\
-    border-radius: 50px; /* Rounded pill shape for soft look */\
-    font-weight: 700;\
-    transition: background-color 0.3s, transform 0.2s;\
-    margin: 0 10px;\
-    display: inline-block;\
-\}\
-\
-.cta-button.primary \{\
-    background-color: var(--color-primary);\
-    color: white;\
-    border: 2px solid var(--color-primary);\
-\}\
-\
-.cta-button.secondary \{\
-    background-color: transparent;\
-    color: var(--color-primary);\
-    border: 2px solid var(--color-primary);\
-\}\
-\
-.cta-group a:hover \{\
-    transform: translateY(-2px); /* Gentle lift on hover */\
-\}\
-\
-.cta-button.primary:hover \{\
-    background-color: #72a37f;\
-\}\
-\
-/* --- Featured Work Section --- */\
-.featured-work \{\
-    padding: 80px 0;\
-    text-align: center;\
-\}\
-\
-.featured-work h2 \{\
-    font-size: 2rem;\
-    margin-bottom: 50px;\
-    font-weight: 400;\
-\}\
-\
-.grid-3 \{\
-    display: grid;\
-    grid-template-columns: repeat(3, 1fr);\
-    gap: 30px;\
-\}\
-\
-.work-card \{\
-    background: var(--color-light-background);\
-    padding: 20px;\
-    border-radius: 10px; /* Rounded corners */\
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05); /* Very light, soft shadow */\
-    text-align: left;\
-    transition: transform 0.3s;\
-\}\
-\
-.work-card:hover \{\
-    transform: translateY(-5px); \
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);\
-\}\
-\
-.work-card h3 \{\
-    margin-top: 15px;\
-    font-size: 1.1rem;\
-    font-weight: 700;\
-\}\
-\
-.work-card p \{\
-    color: #999;\
-    font-size: 0.9rem;\
-\}\
-\
-/* --- Footer --- */\
-footer \{\
-    background-color: #EFEFEF;\
-    padding: 20px 0;\
-    text-align: center;\
-    color: #666;\
-    font-size: 0.9rem;\
-\}}
+:root {
+  --bg: #faf6ff;
+  --bg-accent: #ffffff;
+  --fg: #37394a;
+  --muted: #7b7f96;
+  --accent: #f7b2cd;
+  --accent2: #a5c9ff;
+  --accent3: #c8b8ff;
+  --card-bg: #ffffff;
+  --border-subtle: #e5ddff;
+  --radius-lg: 26px;
+  --radius-pill: 999px;
+  --shadow-soft: 0 18px 40px rgba(115, 106, 169, 0.15);
+  --transition-fast: 0.2s ease-out;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: radial-gradient(circle at 0 0, #ffeaf4 0, transparent 55%),
+              radial-gradient(circle at 100% 0, #e8f0ff 0, transparent 55%),
+              radial-gradient(circle at 0 100%, #f4ecff 0, transparent 55%),
+              var(--bg);
+  color: var(--fg);
+  font-family: "Inter", sans-serif;
+  line-height: 1.6;
+  padding-bottom: 60px;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 20px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 12px 35px rgba(165, 157, 209, 0.16);
+  margin: 20px auto;
+  max-width: 1100px;
+  position: sticky;
+  top: 12px;
+  backdrop-filter: blur(18px);
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand-logo {
+  width: 26px;
+  height: 26px;
+  background: radial-gradient(circle at 30% 20%, var(--accent), var(--accent2));
+  border-radius: 50%;
+}
+
+.brand-name {
+  text-transform: uppercase;
+  font-size: 0.9rem;
+  color: var(--muted);
+  letter-spacing: 0.1em;
+}
+
+nav a {
+  margin-left: 14px;
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 6px 12px;
+  border-radius: var(--radius-pill);
+  transition: var(--transition-fast);
+}
+
+nav a:hover {
+  background: rgba(247, 178, 205, 0.2);
+  color: var(--fg);
+}
+
+.page {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+}
+
+.hero {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding-top: 30px;
+}
+
+.hero-pill {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 6px 16px;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(229, 221, 255, 0.9);
+  font-size: 0.8rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.hero-pill-dot {
+  width: 8px;
+  height: 8px;
+  background: #5cbf8b;
+  border-radius: 50%;
+}
+
+.hero-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2.5rem;
+  margin: 10px 0;
+  color: #34324b;
+}
+
+.accent {
+  background: linear-gradient(120deg, var(--accent), var(--accent2), var(--accent3));
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.hero-sub {
+  color: var(--muted);
+  font-size: 1rem;
+  max-width: 500px;
+}
+
+.hero-chips {
+  display: flex;
+  gap: 10px;
+  margin: 15px 0;
+}
+
+.chip {
+  padding: 6px 14px;
+  background: white;
+  border: 1px solid rgba(211, 201, 255, 0.9);
+  border-radius: var(--radius-pill);
+  font-size: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: var(--muted);
+}
+
+.chip-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: var(--radius-pill);
+  font-size: 0.9rem;
+  cursor: pointer;
+  border: none;
+  transition: var(--transition-fast);
+}
+
+.btn-primary {
+  background: linear-gradient(120deg, var(--accent), var(--accent3), var(--accent2));
+  color: #2b2639;
+  box-shadow: var(--shadow-soft);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 20px 40px rgba(177, 156, 224, 0.45);
+}
+
+.btn-ghost {
+  background: transparent;
+  border: 1px solid var(--border-subtle);
+  color: var(--muted);
+}
+
+.btn-ghost:hover {
+  background: white;
+}
+
+.hero-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 20px;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-soft);
+  position: relative;
+}
+
+.hero-avatar {
+  width: 70px;
+  height: 70px;
+  background: linear-gradient(120deg, #ffffff, #f7eaff);
+  border-radius: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Playfair Display", serif;
+  font-size: 1.4rem;
+  margin-bottom: 10px;
+}
+
+.hero-name {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.hero-role {
+  font-size: 0.85rem;
+  color: var(--muted);
+  margin-bottom: 12px;
+}
+
+.section-title {
+  font-family: "Playfair Display", serif;
+  font-size: 1.8rem;
+  color: #34324b;
+  margin: 30px 0 10px;
+}
+
+.card {
+  background: white;
+  border-radius: 18px;
+  padding: 18px;
+  border: 1px solid var(--border-subtle);
+  box-shadow: var(--shadow-soft);
+}
+
+.card-title {
+  font-size: 1.1rem;
+  color: #34324b;
+  margin-bottom: 4px;
+}
+
+.card-desc {
+  font-size: 0.9rem;
+  color: var(--muted);
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
