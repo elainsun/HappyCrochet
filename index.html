@@ -2,94 +2,74 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Pastel Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
-</head>
-<body>
-  <header>
-    <div class="brand">
-      <div class="brand-logo"></div>
-      <div class="brand-name">It’s You</div>
-    </div>
-    <nav>
-      <a href="#projects">Projects</a>
-      <a href="#about">About</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </header>
+  <title>It's You – Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <section class="hero">
-    <div class="hero-left">
-      <div class="hero-pill">
-        <span class="hero-pill-dot"></span>
-        Open to game / UX internships
-      </div>
-      <div class="hero-hello">Hi, I’m [Your Name]</div>
-      <h1 class="hero-title">
-        I build <span class="accent">playful worlds</span>,<br>
-        and tell stories that stay with you.
-      </h1>
-      <p class="hero-sub">
-        I’m a student game designer and developer who loves cozy worlds,
-        gentle aesthetics, and meaningful interactions.
-      </p>
-      <div class="hero-chips">
-        <div class="chip"><span class="chip-dot"></span> Gamer</div>
-        <div class="chip"><span class="chip-dot"></span> Dreamer</div>
-        <div class="chip"><span class="chip-dot"></span> Designer</div>
-      </div>
-      <div class="hero-actions">
-        <button class="btn btn-primary">See my projects</button>
-        <button class="btn btn-ghost">Learn more</button>
-      </div>
-    </div>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <div class="hero-right">
-      <div class="hero-card">
-        <div class="hero-orb"></div>
-        <div class="hero-avatar">YN</div>
-        <div class="hero-name">[Your Name]</div>
-        <div class="hero-role">Game design · Interactive stories</div>
-        <p class="hero-blurb">
-          I create small narrative games, soft color palettes,
-          and simple mechanics that focus on emotion.
-        </p>
-      </div>
-    </div>
-  </section>
+  <style>
+    :root {
+      --bg: #060712;
+      --bg-accent: #111322;
+      --fg: #f7f4ff;
+      --muted: #a7a4c7;
+      --accent: #f9a8d4;    /* pink */
+      --accent2: #7dd3fc;   /* light blue */
+      --accent3: #c4b5fd;   /* lavender */
+      --card-bg: #151728;
+      --border-subtle: #262842;
+      --radius-lg: 26px;
+      --radius-pill: 999px;
+      --shadow-soft: 0 28px 60px rgba(0, 0, 0, 0.45);
+      --transition-fast: 0.2s ease-out;
+    }
 
-  <section id="projects">
-    <h2 class="section-title">Projects</h2>
-    <div class="projects-grid">
-      <div class="card">
-        <div class="card-tag-row">
-          <span class="card-tag">Game</span>
-          <span>Solo</span>
-        </div>
-        <h3 class="card-title">Lullaby Lights</h3>
-        <p class="card-desc">A gentle exploration game with drifting lanterns.</p>
-      </div>
-    </div>
-  </section>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-  <section id="about">
-    <h2 class="section-title">About Me</h2>
-    <p class="section-sub">
-      I love crafting cozy, emotional, pastel-themed interactive experiences.
-    </p>
-  </section>
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 10% 0, #1e293b 0, transparent 55%),
+        radial-gradient(circle at 80% 0, #4b5563 0, transparent 55%),
+        radial-gradient(circle at 10% 100%, #1d3557 0, transparent 50%),
+        var(--bg);
+      color: var(--fg);
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
 
-  <section id="contact">
-    <h2 class="section-title">Contact</h2>
-    <p class="section-sub">Feel free to reach out for collaboration!</p>
-  </section>
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-  <footer>
-    © <span id="year"></span> [Your Name]
-  </footer>
+    img {
+      max-width: 100%;
+      display: block;
+    }
 
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-</body>
-</html>
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 22px 20px 60px;
+    }
+
+    /* Header */
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+      margin-bottom: 34px;
+      border-radius: 999px;
+      background: rgba(9, 10, 24, 0.8);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      backdrop-filter: blur(18px);
+      positi
