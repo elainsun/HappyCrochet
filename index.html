@@ -72,4 +72,648 @@
       background: rgba(9, 10, 24, 0.8);
       border: 1px solid rgba(148, 163, 184, 0.25);
       backdrop-filter: blur(18px);
-      positi
+      position: sticky;
+      top: 12px;
+      z-index: 10;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-logo {
+      width: 26px;
+      height: 26px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 20%, #f9a8d4, #818cf8);
+      box-shadow: 0 0 0 1px rgba(249, 168, 212, 0.5), 0 8px 14px rgba(0, 0, 0, 0.5);
+    }
+
+    .brand-name {
+      font-size: 0.95rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    nav {
+      display: flex;
+      gap: 10px;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    nav a {
+      padding: 6px 14px;
+      border-radius: 999px;
+      transition: background var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
+    }
+
+    nav a:hover {
+      background: rgba(148, 163, 184, 0.16);
+      color: var(--fg);
+      transform: translateY(-1px);
+    }
+
+    /* Hero */
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
+      gap: 40px;
+      align-items: center;
+      margin-bottom: 60px;
+    }
+
+    .hero-left {
+      position: relative;
+    }
+
+    .hero-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 13px;
+      border-radius: var(--radius-pill);
+      background: rgba(15, 23, 42, 0.8);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      color: var(--muted);
+      font-size: 0.78rem;
+      margin-bottom: 18px;
+    }
+
+    .hero-pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #4ade80;
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.2);
+    }
+
+    .hero-hello {
+      font-size: 0.9rem;
+      color: var(--muted);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .hero-title {
+      font-family: "Playfair Display", Georgia, "Times New Roman", serif;
+      font-size: clamp(2.4rem, 4vw, 3.3rem);
+      line-height: 1.1;
+      margin-bottom: 14px;
+    }
+
+    .hero-title span.accent {
+      background: linear-gradient(120deg, var(--accent), var(--accent2), var(--accent3));
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-sub {
+      font-size: 0.98rem;
+      color: var(--muted);
+      max-width: 480px;
+      margin-bottom: 20px;
+    }
+
+    .hero-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 22px;
+    }
+
+    .chip {
+      font-size: 0.78rem;
+      padding: 5px 11px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      background: rgba(15, 23, 42, 0.9);
+      color: var(--muted);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .chip-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 9px 18px;
+      border-radius: var(--radius-pill);
+      font-size: 0.9rem;
+      border: none;
+      cursor: pointer;
+      transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
+      white-space: nowrap;
+    }
+
+    .btn-primary {
+      background: radial-gradient(circle at 0 0, rgba(248, 250, 252, 0.3), transparent 45%), linear-gradient(120deg, #f9a8d4, #c4b5fd, #7dd3fc);
+      color: #0b1020;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 32px 80px rgba(15, 23, 42, 0.8);
+    }
+
+    .btn-ghost {
+      background: transparent;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      color: var(--muted);
+    }
+
+    .btn-ghost:hover {
+      background: rgba(15, 23, 42, 0.8);
+      color: var(--fg);
+      transform: translateY(-1px);
+    }
+
+    .hero-right {
+      position: relative;
+    }
+
+    .hero-card {
+      border-radius: var(--radius-lg);
+      background: radial-gradient(circle at 0 0, rgba(248, 250, 252, 0.12), transparent 55%), var(--bg-accent);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      padding: 24px 22px;
+      box-shadow: var(--shadow-soft);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-orb {
+      position: absolute;
+      width: 170px;
+      height: 170px;
+      border-radius: 50%;
+      background: radial-gradient(circle at 30% 20%, #f9a8d4, #6366f1);
+      filter: blur(4px);
+      opacity: 0.35;
+      top: -50px;
+      right: -40px;
+    }
+
+    .hero-avatar {
+      width: 70px;
+      height: 70px;
+      border-radius: 22px;
+      background: radial-gradient(circle at 40% 0, #e5e7eb, #0f172a);
+      margin-bottom: 16px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: "Playfair Display", serif;
+      font-size: 1.4rem;
+      letter-spacing: 0.08em;
+    }
+
+    .hero-name {
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 3px;
+    }
+
+    .hero-role {
+      font-size: 0.85rem;
+      color: var(--muted);
+      margin-bottom: 12px;
+    }
+
+    .hero-blurb {
+      font-size: 0.86rem;
+      color: var(--muted);
+    }
+
+    /* Section headings */
+
+    section {
+      margin-bottom: 60px;
+    }
+
+    .section-label {
+      font-size: 0.75rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--muted);
+      margin-bottom: 6px;
+    }
+
+    .section-title {
+      font-family: "Playfair Display", serif;
+      font-size: 1.6rem;
+      margin-bottom: 6px;
+    }
+
+    .section-sub {
+      font-size: 0.9rem;
+      color: var(--muted);
+      margin-bottom: 20px;
+    }
+
+    /* Projects */
+
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      border-radius: 22px;
+      background: radial-gradient(circle at 0 0, rgba(248, 250, 252, 0.06), transparent 50%), var(--card-bg);
+      border: 1px solid var(--border-subtle);
+      padding: 18px 16px 16px;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card-tag-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      font-size: 0.75rem;
+      color: var(--muted);
+    }
+
+    .card-tag {
+      padding: 3px 10px;
+      border-radius: var(--radius-pill);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: rgba(15, 23, 42, 0.8);
+    }
+
+    .card-title {
+      font-size: 1rem;
+      font-weight: 500;
+      margin-bottom: 4px;
+    }
+
+    .card-desc {
+      font-size: 0.86rem;
+      color: var(--muted);
+      margin-bottom: 10px;
+    }
+
+    .card-meta {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.78rem;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .card-link {
+      font-size: 0.8rem;
+      color: var(--accent2);
+      text-decoration: underline;
+    }
+
+    /* About */
+
+    .about-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.3fr);
+      gap: 18px;
+    }
+
+    .about-list {
+      list-style: none;
+      font-size: 0.88rem;
+      color: var(--muted);
+    }
+
+    .about-list li {
+      margin-bottom: 6px;
+    }
+
+    .about-list li::before {
+      content: "• ";
+      color: var(--accent3);
+    }
+
+    /* Contact */
+
+    .contact-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.5fr);
+      gap: 18px;
+      align-items: flex-start;
+    }
+
+    .contact-form label {
+      display: block;
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 4px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+      width: 100%;
+      margin-bottom: 10px;
+      padding: 8px 10px;
+      border-radius: 12px;
+      border: 1px solid var(--border-subtle);
+      background: rgba(15, 23, 42, 0.7);
+      color: var(--fg);
+      font-family: inherit;
+      font-size: 0.86rem;
+      outline: none;
+      transition: border var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
+      resize: vertical;
+    }
+
+    .contact-form input:focus,
+    .contact-form textarea:focus {
+      border-color: var(--accent3);
+      box-shadow: 0 0 0 1px rgba(196, 181, 253, 0.5);
+      background: rgba(15, 23, 42, 0.95);
+    }
+
+    .contact-info-item {
+      font-size: 0.86rem;
+      color: var(--muted);
+      margin-bottom: 8px;
+    }
+
+    .contact-info-item span {
+      display: block;
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: rgba(148, 163, 184, 0.9);
+      margin-bottom: 2px;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 12px;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    /* Responsive */
+
+    @media (max-width: 900px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+      header {
+        position: static;
+      }
+      .about-layout,
+      .contact-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+      header {
+        padding-inline: 14px;
+      }
+      nav {
+        display: none; /* keep it simple on very small screens */
+      }
+      .page {
+        padding-inline: 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <header>
+      <div class="brand">
+        <div class="brand-logo"></div>
+        <div class="brand-name">It’s You</div>
+      </div>
+      <nav>
+        <a href="#projects">Projects</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero-left">
+        <div class="hero-pill">
+          <span class="hero-pill-dot"></span>
+          Open to game / UX internships
+        </div>
+        <div class="hero-hello">Hi, I’m [Your Name]</div>
+        <h1 class="hero-title">
+          I build <span class="accent">playful worlds</span>,
+          and tell stories that stay with you.
+        </h1>
+        <p class="hero-sub">
+          I’m a student game designer and developer who loves cozy worlds,
+          gentle aesthetics, and meaningful interactions. I design with feelings first,
+          then turn them into mechanics and pixels.
+        </p>
+
+        <div class="hero-chips">
+          <div class="chip"><span class="chip-dot"></span> Gamer</div>
+          <div class="chip"><span class="chip-dot"></span> Dreamer</div>
+          <div class="chip"><span class="chip-dot"></span> Designer</div>
+          <div class="chip"><span class="chip-dot"></span> Developer</div>
+        </div>
+
+        <div class="hero-actions">
+          <button class="btn btn-primary" onclick="document.querySelector('#projects').scrollIntoView({behavior:'smooth'})">
+            See my projects
+          </button>
+          <button class="btn btn-ghost" onclick="document.querySelector('#about').scrollIntoView({behavior:'smooth'})">
+            Learn more about me
+          </button>
+        </div>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-card">
+          <div class="hero-orb"></div>
+          <div class="hero-avatar">
+            YN
+          </div>
+          <div class="hero-name">[Your Name]</div>
+          <div class="hero-role">Game design · Interactive stories</div>
+          <p class="hero-blurb">
+            I’m currently experimenting with small narrative games, soft color palettes,
+            and simple mechanics that focus on emotion and atmosphere. I love combining
+            math, art, and storytelling into interactive experiences.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PROJECTS -->
+    <section id="projects">
+      <div class="section-label">Selected Projects</div>
+      <h2 class="section-title">Worlds I’ve been building</h2>
+      <p class="section-sub">
+        A mix of game prototypes, interactive experiments, and personal work-in-progress.
+      </p>
+
+      <div class="projects-grid">
+        <article class="card">
+          <div class="card-tag-row">
+            <span class="card-tag">Game · Narrative</span>
+            <span>Solo · Unity</span>
+          </div>
+          <h3 class="card-title">“Lullaby Lights”</h3>
+          <p class="card-desc">
+            A gentle top-down exploration game where you guide drifting lanterns through
+            a quiet town at night, uncovering small stories hidden in the streets.
+          </p>
+          <div class="card-meta">
+            <span>Unity · C# · Pixel art</span>
+            <a class="card-link" href="#" target="_blank">View demo</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-tag-row">
+            <span class="card-tag">Game · Systems</span>
+            <span>Team project</span>
+          </div>
+          <h3 class="card-title">“Tea House Tycoon”</h3>
+          <p class="card-desc">
+            A cozy management game about running a tiny tea house, balancing recipes,
+            moods, and stories of your regulars instead of just making profit.
+          </p>
+          <div class="card-meta">
+            <span>Gameplay design · Balancing</span>
+            <a class="card-link" href="#" target="_blank">Design doc</a>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="card-tag-row">
+            <span class="card-tag">Interactive · Web</span>
+            <span>Personal</span>
+          </div>
+          <h3 class="card-title">Pastel Orbit</h3>
+          <p class="card-desc">
+            A small web experience where floating orbs respond to your cursor,
+            visualizing mood and music in soft gradients and motion.
+          </p>
+          <div class="card-meta">
+            <span>HTML · CSS · JS</span>
+            <a class="card-link" href="#" target="_blank">Open site</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section id="about">
+      <div class="section-label">About Me</div>
+      <h2 class="section-title">Player two, that’s me</h2>
+      <p class="section-sub">
+        A quick snapshot of who I am, what I’m learning, and what I’d love to work on next.
+      </p>
+
+      <div class="about-layout">
+        <article class="card">
+          <p style="font-size:0.9rem; color:var(--muted);">
+            I’m a high school student with a strong math and coding background who fell in love
+            with game design. I enjoy thinking about how mechanics, pacing, and visual style
+            can gently guide a player’s feelings.
+          </p>
+          <p style="font-size:0.9rem; color:var(--muted); margin-top:8px;">
+            Right now I’m exploring puzzle design, narrative beats in short play sessions,
+            and how to create relaxing spaces that still feel meaningful and challenging.
+          </p>
+        </article>
+
+        <article class="card">
+          <ul class="about-list">
+            <li>Strong in math and logic (AIME qualifier, AP math / CS).</li>
+            <li>Learning Unity & C# for small narrative and puzzle games.</li>
+            <li>Interested in UX, game feel, and visual storytelling.</li>
+            <li>Love cozy, emotionally warm games and soft aesthetics.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact">
+      <div class="section-label">Contact</div>
+      <h2 class="section-title">Let’s build something gentle</h2>
+      <p class="section-sub">
+        Open to feedback, collaboration, mentorship, and opportunities in game design / dev.
+      </p>
+
+      <div class="contact-layout">
+        <article class="card contact-form">
+          <form>
+            <label for="name">Name</label>
+            <input id="name" type="text" placeholder="Your name" />
+            <label for="email">Email</label>
+            <input id="email" type="email" placeholder="you@example.com" />
+            <label for="message">Message</label>
+            <textarea id="message" placeholder="Tell me about your idea, project, or question..."></textarea>
+            <button type="button" class="btn btn-primary" style="margin-top:6px;">
+              Send (placeholder)
+            </button>
+          </form>
+        </article>
+
+        <article class="card">
+          <div class="contact-info-item">
+            <span>Email</span>
+            you@example.com
+          </div>
+          <div class="contact-info-item">
+            <span>Portfolio</span>
+            <a href="#" target="_blank">your-portfolio-link</a>
+          </div>
+          <div class="contact-info-item">
+            <span>GitHub</span>
+            <a href="#" target="_blank">github.com/yourhandle</a>
+          </div>
+          <div class="contact-info-item">
+            <span>Itch.io / Game page</span>
+            <a href="#" target="_blank">yourgame.itch.io</a>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <footer>
+      © <span id="year"></span> [Your Name] · made with pixels & quiet worlds
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
