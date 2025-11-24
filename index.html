@@ -1,21 +1,75 @@
-<!-- Add your HTML content here; you can specify About Me, My Secret, and pictures placeholders -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>Your Name – Personal Site</title>
-</head>
-<body>
-  <section id="about">
-    <h2>About Me</h2>
-    <p>Hello! I am a creative student who loves game design, soft pastel colors, and making calm digital experiences.</p>
-    <img src="/mnt/data/example1.jpg" alt="About Me Image" width="300" />
-  </section>
+  <title>It's You – Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <section id="secret">
-    <h2>My Secret</h2>
-    <p>My secret is that I always design at midnight when the world feels quiet and magical.</p>
-    <img src="/mnt/data/example2.jpg" alt="Secret Image" width="300" />
-  </section>
-</body>
-</html>
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #060712;
+      --bg-accent: #111322;
+      --fg: #f7f4ff;
+      --muted: #a7a4c7;
+      --accent: #f9a8d4;    /* pink */
+      --accent2: #7dd3fc;   /* light blue */
+      --accent3: #c4b5fd;   /* lavender */
+      --card-bg: #151728;
+      --border-subtle: #262842;
+      --radius-lg: 26px;
+      --radius-pill: 999px;
+      --shadow-soft: 0 28px 60px rgba(0, 0, 0, 0.45);
+      --transition-fast: 0.2s ease-out;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 10% 0, #1e293b 0, transparent 55%),
+        radial-gradient(circle at 80% 0, #4b5563 0, transparent 55%),
+        radial-gradient(circle at 10% 100%, #1d3557 0, transparent 50%),
+        var(--bg);
+      color: var(--fg);
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 22px 20px 60px;
+    }
+
+    /* Header */
+
+    header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 16px;
+      margin-bottom: 34px;
+      border-radius: 999px;
+      background: rgba(9, 10, 24, 0.8);
+      border: 1px solid rgba(148, 163, 184, 0.25);
+      backdrop-filter: blur(18px);
+      positi
