@@ -1,126 +1,21 @@
+<!-- Add your HTML content here; you can specify About Me, My Secret, and pictures placeholders -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <title>Your Name – Personal Site</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+  <section id="about">
+    <h2>About Me</h2>
+    <p>Hello! I am a creative student who loves game design, soft pastel colors, and making calm digital experiences.</p>
+    <img src="/mnt/data/example1.jpg" alt="About Me Image" width="300" />
+  </section>
 
-  <!-- Google Font -->
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --bg: #fdfafc;
-      --bg-accent: #f7f4ff;
-      --primary: #f4b6c2;   /* pastel pink */
-      --secondary: #b0d9ff; /* pastel blue */
-      --accent: #c7f0bd;    /* pastel green */
-      --text-main: #444444;
-      --text-muted: #777777;
-      --card-bg: #ffffff;
-      --border-soft: #f0e7ff;
-      --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.04);
-      --radius-lg: 22px;
-      --radius-pill: 999px;
-      --transition-fast: 0.2s ease-out;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      font-family: "Poppins", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top left, #ffeef5, #fdfafc 45%, #f2f7ff);
-      color: var(--text-main);
-      line-height: 1.6;
-      min-height: 100vh;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    /* Layout */
-
-    .page {
-      max-width: 1080px;
-      margin: 0 auto;
-      padding: 20px 20px 60px;
-    }
-
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 14px 20px;
-      margin: 10px 0 24px;
-      border-radius: var(--radius-pill);
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(16px);
-      box-shadow: 0 10px 28px rgba(220, 210, 255, 0.35);
-      border: 1px solid rgba(255, 255, 255, 0.7);
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .logo-circle {
-      width: 34px;
-      height: 34px;
-      border-radius: 50%;
-      background: linear-gradient(135deg, var(--primary), var(--secondary));
-      box-shadow: 0 6px 14px rgba(200, 160, 220, 0.45);
-    }
-
-    .logo-text {
-      font-weight: 600;
-      font-size: 1rem;
-      letter-spacing: 0.02em;
-    }
-
-    nav {
-      display: flex;
-      gap: 16px;
-      font-size: 0.9rem;
-    }
-
-    nav a {
-      padding: 7px 14px;
-      border-radius: 999px;
-      color: var(--text-muted);
-      transition: background var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
-    }
-
-    nav a:hover {
-      background: #f9f0ff;
-      color: var(--text-main);
-      transform: translateY(-1px);
-    }
-
-    /* Sections */
-
-    section {
-      margin-bottom: 60px;
-    }
-
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2.4fr);
-      gap: 40px;
-      align-items: center;
-      margin-top: 16px;
-    }
-
-    .hero-l
+  <section id="secret">
+    <h2>My Secret</h2>
+    <p>My secret is that I always design at midnight when the world feels quiet and magical.</p>
+    <img src="/mnt/data/example2.jpg" alt="Secret Image" width="300" />
+  </section>
+</body>
+</html>
