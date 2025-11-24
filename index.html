@@ -1,522 +1,34 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <title>It's You – Portfolio</title>
+  <title>Mom's Crochet – Handmade with Love</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --bg: #060712;
-      --bg-accent: #111322;
-      --fg: #f7f4ff;
-      --muted: #a7a4c7;
-      --accent: #f9a8d4;    /* pink */
-      --accent2: #7dd3fc;   /* light blue */
-      --accent3: #c4b5fd;   /* lavender */
-      --card-bg: #151728;
-      --border-subtle: #262842;
-      --radius-lg: 26px;
-      --radius-pill: 999px;
-      --shadow-soft: 0 28px 60px rgba(0, 0, 0, 0.45);
-      --transition-fast: 0.2s ease-out;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    body {
-      min-height: 100vh;
-      background:
-        radial-gradient(circle at 10% 0, #1e293b 0, transparent 55%),
-        radial-gradient(circle at 80% 0, #4b5563 0, transparent 55%),
-        radial-gradient(circle at 10% 100%, #1d3557 0, transparent 50%),
-        var(--bg);
-      color: var(--fg);
-      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    .page {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 22px 20px 60px;
-    }
-
-    /* Header */
-
-    header {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 10px 16px;
-      margin-bottom: 34px;
-      border-radius: 999px;
-      background: rgba(9, 10, 24, 0.8);
-      border: 1px solid rgba(148, 163, 184, 0.25);
-      backdrop-filter: blur(18px);
-      position: sticky;
-      top: 12px;
-      z-index: 10;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 10px;
-    }
-
-    .brand-logo {
-      width: 26px;
-      height: 26px;
-      border-radius: 50%;
-      background: radial-gradient(circle at 30% 20%, #f9a8d4, #818cf8);
-      box-shadow: 0 0 0 1px rgba(249, 168, 212, 0.5), 0 8px 14px rgba(0, 0, 0, 0.5);
-    }
-
-    .brand-name {
-      font-size: 0.95rem;
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      color: var(--muted);
-    }
-
-    nav {
-      display: flex;
-      gap: 10px;
-      font-size: 0.85rem;
-      color: var(--muted);
-    }
-
-    nav a {
-      padding: 6px 14px;
-      border-radius: 999px;
-      transition: background var(--transition-fast), color var(--transition-fast), transform var(--transition-fast);
-    }
-
-    nav a:hover {
-      background: rgba(148, 163, 184, 0.16);
-      color: var(--fg);
-      transform: translateY(-1px);
-    }
-
-    /* Hero */
-
-    .hero {
-      display: grid;
-      grid-template-columns: minmax(0, 3fr) minmax(0, 2.2fr);
-      gap: 40px;
-      align-items: center;
-      margin-bottom: 60px;
-    }
-
-    .hero-left {
-      position: relative;
-    }
-
-    .hero-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 6px 13px;
-      border-radius: var(--radius-pill);
-      background: rgba(15, 23, 42, 0.8);
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      color: var(--muted);
-      font-size: 0.78rem;
-      margin-bottom: 18px;
-    }
-
-    .hero-pill-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: #4ade80;
-      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.2);
-    }
-
-    .hero-hello {
-      font-size: 0.9rem;
-      color: var(--muted);
-      letter-spacing: 0.14em;
-      text-transform: uppercase;
-      margin-bottom: 6px;
-    }
-
-    .hero-title {
-      font-family: "Playfair Display", Georgia, "Times New Roman", serif;
-      font-size: clamp(2.4rem, 4vw, 3.3rem);
-      line-height: 1.1;
-      margin-bottom: 14px;
-    }
-
-    .hero-title span.accent {
-      background: linear-gradient(120deg, var(--accent), var(--accent2), var(--accent3));
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-
-    .hero-sub {
-      font-size: 0.98rem;
-      color: var(--muted);
-      max-width: 480px;
-      margin-bottom: 20px;
-    }
-
-    .hero-chips {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 22px;
-    }
-
-    .chip {
-      font-size: 0.78rem;
-      padding: 5px 11px;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      background: rgba(15, 23, 42, 0.9);
-      color: var(--muted);
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    .chip-dot {
-      width: 5px;
-      height: 5px;
-      border-radius: 50%;
-      background: var(--accent);
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      padding: 9px 18px;
-      border-radius: var(--radius-pill);
-      font-size: 0.9rem;
-      border: none;
-      cursor: pointer;
-      transition: background var(--transition-fast), transform var(--transition-fast), box-shadow var(--transition-fast);
-      white-space: nowrap;
-    }
-
-    .btn-primary {
-      background: radial-gradient(circle at 0 0, rgba(248, 250, 252, 0.3), transparent 45%), linear-gradient(120deg, #f9a8d4, #c4b5fd, #7dd3fc);
-      color: #0b1020;
-      box-shadow: var(--shadow-soft);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 32px 80px rgba(15, 23, 42, 0.8);
-    }
-
-    .btn-ghost {
-      background: transparent;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      color: var(--muted);
-    }
-
-    .btn-ghost:hover {
-      background: rgba(15, 23, 42, 0.8);
-      color: var(--fg);
-      transform: translateY(-1px);
-    }
-
-    .hero-right {
-      position: relative;
-    }
-
-    .hero-card {
-      border-radius: var(--radius-lg);
-      background: radial-gradient(circle at 0 0, rgba(248, 250, 252, 0.12), transparent 55%), var(--bg-accent);
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      padding: 24px 22px;
-      box-shadow: var(--shadow-soft);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .hero-orb {
-      position: absolute;
-      width: 170px;
-      height: 170px;
-      border-radius: 50%;
-      background: radial-gradient(circle at 30% 20%, #f9a8d4, #6366f1);
-      filter: blur(4px);
-      opacity: 0.35;
-      top: -50px;
-      right: -40px;
-    }
-
-    .hero-avatar {
-      width: 70px;
-      height: 70px;
-      border-radius: 22px;
-      background: radial-gradient(circle at 40% 0, #e5e7eb, #0f172a);
-      margin-bottom: 16px;
-      border: 1px solid rgba(148, 163, 184, 0.6);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: "Playfair Display", serif;
-      font-size: 1.4rem;
-      letter-spacing: 0.08em;
-    }
-
-    .hero-name {
-      font-size: 1rem;
-      font-weight: 500;
-      margin-bottom: 3px;
-    }
-
-    .hero-role {
-      font-size: 0.85rem;
-      color: var(--muted);
-      margin-bottom: 12px;
-    }
-
-    .hero-blurb {
-      font-size: 0.86rem;
-      color: var(--muted);
-    }
-
-    /* Section headings */
-
-    section {
-      margin-bottom: 60px;
-    }
-
-    .section-label {
-      font-size: 0.75rem;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: var(--muted);
-      margin-bottom: 6px;
-    }
-
-    .section-title {
-      font-family: "Playfair Display", serif;
-      font-size: 1.6rem;
-      margin-bottom: 6px;
-    }
-
-    .section-sub {
-      font-size: 0.9rem;
-      color: var(--muted);
-      margin-bottom: 20px;
-    }
-
-    /* Projects */
-
-    .projects-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 18px;
-    }
-
-    .card {
-      border-radius: 22px;
-      background: radial-gradient(circle at 0 0, rgba(248, 250, 252, 0.06), transparent 50%), var(--card-bg);
-      border: 1px solid var(--border-subtle);
-      padding: 18px 16px 16px;
-      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .card-tag-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 8px;
-      font-size: 0.75rem;
-      color: var(--muted);
-    }
-
-    .card-tag {
-      padding: 3px 10px;
-      border-radius: var(--radius-pill);
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      background: rgba(15, 23, 42, 0.8);
-    }
-
-    .card-title {
-      font-size: 1rem;
-      font-weight: 500;
-      margin-bottom: 4px;
-    }
-
-    .card-desc {
-      font-size: 0.86rem;
-      color: var(--muted);
-      margin-bottom: 10px;
-    }
-
-    .card-meta {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      font-size: 0.78rem;
-      color: var(--muted);
-      margin-top: 4px;
-    }
-
-    .card-link {
-      font-size: 0.8rem;
-      color: var(--accent2);
-      text-decoration: underline;
-    }
-
-    /* About */
-
-    .about-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1.7fr) minmax(0, 1.3fr);
-      gap: 18px;
-    }
-
-    .about-list {
-      list-style: none;
-      font-size: 0.88rem;
-      color: var(--muted);
-    }
-
-    .about-list li {
-      margin-bottom: 6px;
-    }
-
-    .about-list li::before {
-      content: "• ";
-      color: var(--accent3);
-    }
-
-    /* Contact */
-
-    .contact-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.5fr);
-      gap: 18px;
-      align-items: flex-start;
-    }
-
-    .contact-form label {
-      display: block;
-      font-size: 0.8rem;
-      color: var(--muted);
-      margin-bottom: 4px;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      margin-bottom: 10px;
-      padding: 8px 10px;
-      border-radius: 12px;
-      border: 1px solid var(--border-subtle);
-      background: rgba(15, 23, 42, 0.7);
-      color: var(--fg);
-      font-family: inherit;
-      font-size: 0.86rem;
-      outline: none;
-      transition: border var(--transition-fast), box-shadow var(--transition-fast), background var(--transition-fast);
-      resize: vertical;
-    }
-
-    .contact-form input:focus,
-    .contact-form textarea:focus {
-      border-color: var(--accent3);
-      box-shadow: 0 0 0 1px rgba(196, 181, 253, 0.5);
-      background: rgba(15, 23, 42, 0.95);
-    }
-
-    .contact-info-item {
-      font-size: 0.86rem;
-      color: var(--muted);
-      margin-bottom: 8px;
-    }
-
-    .contact-info-item span {
-      display: block;
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: rgba(148, 163, 184, 0.9);
-      margin-bottom: 2px;
-    }
-
-    footer {
-      text-align: center;
-      margin-top: 12px;
-      font-size: 0.78rem;
-      color: var(--muted);
-    }
-
-    /* Responsive */
-
-    @media (max-width: 900px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
-      header {
-        position: static;
-      }
-      .about-layout,
-      .contact-layout {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 600px) {
-      header {
-        padding-inline: 14px;
-      }
-      nav {
-        display: none; /* keep it simple on very small screens */
-      }
-      .page {
-        padding-inline: 16px;
-      }
-    }
-  </style>
+  <!-- Google Fonts -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Inter:wght@300;400;500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Main CSS -->
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="page">
+    <!-- HEADER -->
     <header>
       <div class="brand">
         <div class="brand-logo"></div>
-        <div class="brand-name">It’s You</div>
+        <div class="brand-text">
+          <div class="brand-name">Mom's Crochet</div>
+          <div class="brand-tagline">Handmade with love</div>
+        </div>
       </div>
       <nav>
-        <a href="#projects">Projects</a>
+        <a href="#gallery">Gallery</a>
         <a href="#about">About</a>
+        <a href="#custom">Custom Orders</a>
         <a href="#contact">Contact</a>
       </nav>
     </header>
@@ -526,32 +38,39 @@
       <div class="hero-left">
         <div class="hero-pill">
           <span class="hero-pill-dot"></span>
-          Open to game / UX internships
+          Cozy, handmade crochet for every season
         </div>
-        <div class="hero-hello">Hi, I’m [Your Name]</div>
+
         <h1 class="hero-title">
-          I build <span class="accent">playful worlds</span>,
-          and tell stories that stay with you.
+          Warm <span class="accent">stitches</span>,  
+          softer <span class="accent">moments</span>.
         </h1>
+
         <p class="hero-sub">
-          I’m a student game designer and developer who loves cozy worlds,
-          gentle aesthetics, and meaningful interactions. I design with feelings first,
-          then turn them into mechanics and pixels.
+          Every piece is hand-crocheted with care, from snug blankets and
+          plush toys to delicate accessories. This is my mom’s little corner
+          of the internet, where her yarn becomes stories.
         </p>
 
         <div class="hero-chips">
-          <div class="chip"><span class="chip-dot"></span> Gamer</div>
-          <div class="chip"><span class="chip-dot"></span> Dreamer</div>
-          <div class="chip"><span class="chip-dot"></span> Designer</div>
-          <div class="chip"><span class="chip-dot"></span> Developer</div>
+          <div class="chip"><span class="chip-dot"></span> Blankets</div>
+          <div class="chip"><span class="chip-dot"></span> Plushies</div>
+          <div class="chip"><span class="chip-dot"></span> Accessories</div>
+          <div class="chip"><span class="chip-dot"></span> Custom Gifts</div>
         </div>
 
         <div class="hero-actions">
-          <button class="btn btn-primary" onclick="document.querySelector('#projects').scrollIntoView({behavior:'smooth'})">
-            See my projects
+          <button
+            class="btn btn-primary"
+            onclick="document.querySelector('#gallery').scrollIntoView({behavior:'smooth'})"
+          >
+            View crochet gallery
           </button>
-          <button class="btn btn-ghost" onclick="document.querySelector('#about').scrollIntoView({behavior:'smooth'})">
-            Learn more about me
+          <button
+            class="btn btn-ghost"
+            onclick="document.querySelector('#custom').scrollIntoView({behavior:'smooth'})"
+          >
+            Order a custom piece
           </button>
         </div>
       </div>
@@ -559,74 +78,78 @@
       <div class="hero-right">
         <div class="hero-card">
           <div class="hero-orb"></div>
-          <div class="hero-avatar">
-            YN
+
+          <!-- Replace this div with an <img> if you have a real photo -->
+          <div class="hero-photo">
+            <div class="hero-photo-inner">
+              <span>🧶</span>
+            </div>
           </div>
-          <div class="hero-name">[Your Name]</div>
-          <div class="hero-role">Game design · Interactive stories</div>
-          <p class="hero-blurb">
-            I’m currently experimenting with small narrative games, soft color palettes,
-            and simple mechanics that focus on emotion and atmosphere. I love combining
-            math, art, and storytelling into interactive experiences.
+
+          <div class="hero-mom-name">Handmade by Mom</div>
+          <p class="hero-mom-note">
+            “I love creating soft, cozy pieces that make people feel cared for.
+            Thank you for visiting my little crochet world.”
           </p>
         </div>
       </div>
     </section>
 
-    <!-- PROJECTS -->
-    <section id="projects">
-      <div class="section-label">Selected Projects</div>
-      <h2 class="section-title">Worlds I’ve been building</h2>
+    <!-- GALLERY -->
+    <section id="gallery">
+      <div class="section-label">Crochet Gallery</div>
+      <h2 class="section-title">A few of Mom’s favorites</h2>
       <p class="section-sub">
-        A mix of game prototypes, interactive experiments, and personal work-in-progress.
+        Here are some sample pieces. You can replace these with real photos
+        of your mom’s work later.
       </p>
 
       <div class="projects-grid">
         <article class="card">
           <div class="card-tag-row">
-            <span class="card-tag">Game · Narrative</span>
-            <span>Solo · Unity</span>
+            <span class="card-tag">Blanket</span>
+            <span>Made to order</span>
           </div>
-          <h3 class="card-title">“Lullaby Lights”</h3>
+          <h3 class="card-title">Pastel Patchwork Throw</h3>
           <p class="card-desc">
-            A gentle top-down exploration game where you guide drifting lanterns through
-            a quiet town at night, uncovering small stories hidden in the streets.
+            A soft, pastel granny-square blanket perfect for couches,
+            reading corners, and lazy Sunday mornings.
           </p>
           <div class="card-meta">
-            <span>Unity · C# · Pixel art</span>
-            <a class="card-link" href="#" target="_blank">View demo</a>
+            <span>Colors: custom</span>
+            <span class="card-note">Ideal as a gift</span>
           </div>
         </article>
 
         <article class="card">
           <div class="card-tag-row">
-            <span class="card-tag">Game · Systems</span>
-            <span>Team project</span>
+            <span class="card-tag">Plushie</span>
+            <span>Customizable</span>
           </div>
-          <h3 class="card-title">“Tea House Tycoon”</h3>
+          <h3 class="card-title">Crochet Animal Friends</h3>
           <p class="card-desc">
-            A cozy management game about running a tiny tea house, balancing recipes,
-            moods, and stories of your regulars instead of just making profit.
+            Cute handmade toys—bunnies, bears, or any little friend you can
+            imagine, stitched with care and safety in mind.
           </p>
           <div class="card-meta">
-            <span>Gameplay design · Balancing</span>
-            <a class="card-link" href="#" target="_blank">Design doc</a>
+            <span>Sizes: small–large</span>
+            <span class="card-note">Child-friendly yarn</span>
           </div>
         </article>
 
         <article class="card">
           <div class="card-tag-row">
-            <span class="card-tag">Interactive · Web</span>
-            <span>Personal</span>
+            <span class="card-tag">Accessories</span>
+            <span>Seasonal</span>
           </div>
-          <h3 class="card-title">Pastel Orbit</h3>
+          <h3 class="card-title">Scarves, Hats & More</h3>
           <p class="card-desc">
-            A small web experience where floating orbs respond to your cursor,
-            visualizing mood and music in soft gradients and motion.
+            Cozy accessories in your favorite colors: scarves, beanies, headbands,
+            and little accents for everyday warmth.
           </p>
           <div class="card-meta">
-            <span>HTML · CSS · JS</span>
-            <a class="card-link" href="#" target="_blank">Open site</a>
+            <span>Made from soft yarn</span>
+            <span class="card-note">Perfect for winter</span>
           </div>
         </article>
       </div>
@@ -634,32 +157,70 @@
 
     <!-- ABOUT -->
     <section id="about">
-      <div class="section-label">About Me</div>
-      <h2 class="section-title">Player two, that’s me</h2>
+      <div class="section-label">About Mom</div>
+      <h2 class="section-title">Every stitch has a story</h2>
       <p class="section-sub">
-        A quick snapshot of who I am, what I’m learning, and what I’d love to work on next.
+        A quick introduction to the hands behind the hooks.
       </p>
 
       <div class="about-layout">
         <article class="card">
-          <p style="font-size:0.9rem; color:var(--muted);">
-            I’m a high school student with a strong math and coding background who fell in love
-            with game design. I enjoy thinking about how mechanics, pacing, and visual style
-            can gently guide a player’s feelings.
+          <p class="about-text">
+            My mom has been crocheting for years, turning balls of yarn into
+            blankets, toys, and gifts that make people smile. What started as a
+            hobby for family and friends has slowly grown into something
+            she’d love to share with more people.
           </p>
-          <p style="font-size:0.9rem; color:var(--muted); margin-top:8px;">
-            Right now I’m exploring puzzle design, narrative beats in short play sessions,
-            and how to create relaxing spaces that still feel meaningful and challenging.
+          <p class="about-text">
+            She chooses soft, comfortable yarn and pays attention to details,
+            from clean finishing to color harmony, so every piece feels special
+            the moment you unwrap it.
           </p>
         </article>
 
         <article class="card">
           <ul class="about-list">
-            <li>Strong in math and logic (AIME qualifier, AP math / CS).</li>
-            <li>Learning Unity & C# for small narrative and puzzle games.</li>
-            <li>Interested in UX, game feel, and visual storytelling.</li>
-            <li>Love cozy, emotionally warm games and soft aesthetics.</li>
+            <li>Handmade in a smoke-free, pet-friendly home.</li>
+            <li>Custom colors and sizes available upon request.</li>
+            <li>Thoughtful gifts for babies, kids, and loved ones.</li>
+            <li>Each piece is unique, just like the person who receives it.</li>
           </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- CUSTOM ORDERS -->
+    <section id="custom">
+      <div class="section-label">Custom Orders</div>
+      <h2 class="section-title">Made just for you</h2>
+      <p class="section-sub">
+        Here’s how to request a custom crochet piece from Mom.
+      </p>
+
+      <div class="custom-layout">
+        <article class="card">
+          <ol class="steps-list">
+            <li><strong>Step 1 – Idea</strong><br />
+              Tell us what you’d like: blanket, plushie, accessory, or something else.
+            </li>
+            <li><strong>Step 2 – Colors & Style</strong><br />
+              Choose your favorite colors, mood (pastel, bold, neutral), and size.
+            </li>
+            <li><strong>Step 3 – Timing</strong><br />
+              We’ll let you know the estimated time to crochet and ship.
+            </li>
+            <li><strong>Step 4 – Finished with love</strong><br />
+              Your piece is carefully finished, packaged, and sent to you.
+            </li>
+          </ol>
+        </article>
+
+        <article class="card custom-highlight">
+          <p class="about-text">
+            ✨ Every custom order is a small collaboration.
+            You bring the idea, Mom brings the yarn, patience,
+            and a lot of heart.
+          </p>
         </article>
       </div>
     </section>
@@ -667,9 +228,9 @@
     <!-- CONTACT -->
     <section id="contact">
       <div class="section-label">Contact</div>
-      <h2 class="section-title">Let’s build something gentle</h2>
+      <h2 class="section-title">Say hello or request a piece</h2>
       <p class="section-sub">
-        Open to feedback, collaboration, mentorship, and opportunities in game design / dev.
+        Use the form below to ask a question, share an idea, or start a custom order.
       </p>
 
       <div class="contact-layout">
@@ -677,12 +238,19 @@
           <form>
             <label for="name">Name</label>
             <input id="name" type="text" placeholder="Your name" />
+
             <label for="email">Email</label>
             <input id="email" type="email" placeholder="you@example.com" />
+
             <label for="message">Message</label>
-            <textarea id="message" placeholder="Tell me about your idea, project, or question..."></textarea>
-            <button type="button" class="btn btn-primary" style="margin-top:6px;">
-              Send (placeholder)
+            <textarea
+              id="message"
+              placeholder="Tell us what you’re dreaming of – blanket, plushie, colors, size..."
+            ></textarea>
+
+            <!-- This is a visual form only; to make it work, connect it to a backend or form service -->
+            <button type="button" class="btn btn-primary" style="margin-top: 6px;">
+              Send message
             </button>
           </form>
         </article>
@@ -690,26 +258,23 @@
         <article class="card">
           <div class="contact-info-item">
             <span>Email</span>
-            you@example.com
+            yourmomscrochet@example.com
           </div>
           <div class="contact-info-item">
-            <span>Portfolio</span>
-            <a href="#" target="_blank">your-portfolio-link</a>
+            <span>Instagram</span>
+            <a href="#" target="_blank">@mom_crochets_here</a>
           </div>
           <div class="contact-info-item">
-            <span>GitHub</span>
-            <a href="#" target="_blank">github.com/yourhandle</a>
-          </div>
-          <div class="contact-info-item">
-            <span>Itch.io / Game page</span>
-            <a href="#" target="_blank">yourgame.itch.io</a>
+            <span>Shipping</span>
+            Based in [Your City], shipping options can be discussed by email.
           </div>
         </article>
       </div>
     </section>
 
+    <!-- FOOTER -->
     <footer>
-      © <span id="year"></span> [Your Name] · made with pixels & quiet worlds
+      © <span id="year"></span> Mom's Crochet · stitched with love 🧶
     </footer>
   </div>
 
